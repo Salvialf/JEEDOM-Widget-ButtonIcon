@@ -1,5 +1,5 @@
 <div class="cmd cmd-widget buttonIcon reportModeHidden" data-type="action" data-subtype="other" data-cmd_id="#id#" data-cmd_uid="#uid#" data-version="#version#" data-eqLogic_id="#eqLogic_id#" title="#name#">
-  <div class="button">
+  <div class="customButton">
     <a class="action cmdButton tooltips"></a>
   </div>
   <script>
@@ -8,15 +8,15 @@
         var cmd = $('.cmd[data-cmd_id=#id#]');
         let iconColor = ('#icon-color#' != '#'+'icon-color#') ? '#icon-color#!important' : '#B93A3E!important';
         (isset(resultat.display.icon) && resultat.display.icon != '') ? cmd.find('.cmdButton').attr('style', 'color:'+iconColor).html(resultat.display.icon) : cmd.find('.cmdButton').attr('style', 'color:'+iconColor).html('<i class="fas fa-power-off"></i>');
-      	is_numeric('#icon-size#') ? cmd.css('--icon-size', parseFloat('#icon-size#') + 'px') : cmd.css('--icon-size', '40px');
+      	is_numeric('#icon-size#') ? cmd.css('--icon-size', parseFloat('#icon-size#') + 'px') : cmd.css('--icon-size', '30px');
         ('#inline#' != 'unchecked') ? cmd.css('display', 'inline-block') : cmd.css('display', 'block');
 		    var valeur= (isset(resultat.configuration.value)) ? (resultat.configuration.value).replace('type=setvalue&value=', '') : '#name#';
         if (_options.display_value == valeur) {
           let selColor = (isset(resultat.display.parameters) && isset(resultat.display.parameters['selected-color'])) ? resultat.display.parameters['selected-color'] : '#DCDCDC';
           $('.buttonIcon').css('--selected-color', selColor);
-				  cmd.find('.button').addClass("btn-on", 500);
+				  cmd.find('.customButton').addClass("btn-on", 500);
 			  } else  {
-				  cmd.find('.button').removeClass("btn-on");
+				  cmd.find('.customButton').removeClass("btn-on");
 			  }
 		  }
 	  });
@@ -29,12 +29,12 @@
   </script>
    <style>
 .buttonIcon {
-  --icon-size: 40px;
+  --icon-size: 30px;
   --selected-color: #DCDCDC;
   min-width: unset!important;
   margin: 2px;
 }
-.button {
+.customButton {
   width: calc(var(--icon-size) * 1.5)!important;
   height: calc(var(--icon-size) * 1.5)!important;
   display:flex;
@@ -44,7 +44,7 @@
 .cmdButton i {
   font-size: var(--icon-size)!important;
 }
-.button:not(.btn-on):hover {
+.customButton:not(.btn-on):hover {
   background-color: rgb(220, 220, 220)!important;
   opacity: 0.5;
   border-radius: 50%;
