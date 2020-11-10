@@ -1,6 +1,6 @@
 <div class="cmd cmd-widget buttonIcon reportModeHidden" data-type="action" data-subtype="other" data-cmd_id="#id#" data-cmd_uid="#uid#" data-version="#version#" data-eqLogic_id="#eqLogic_id#" title="#name#">
   <div class="customButton">
-    <a class="action cmdButton tooltips"></a>
+    <a class="action cmdButton"></a>
   </div>
   <script>
     jeedom.cmd.update['#id#'] = function(_options){
@@ -34,22 +34,22 @@
   min-width: unset!important;
   margin: 2px;
 }
-.customButton {
+.buttonIcon .customButton {
   width: calc(var(--icon-size) * 1.5)!important;
   height: calc(var(--icon-size) * 1.5)!important;
   display:flex;
   justify-content:center;
   align-items:center;
 }
-.cmdButton i {
+.buttonIcon .customButton .cmdButton i {
   font-size: var(--icon-size)!important;
 }
-.customButton:not(.btn-on):hover {
+.buttonIcon .customButton:not(.btn-on):hover {
   background-color: rgb(220, 220, 220)!important;
   opacity: 0.5;
   border-radius: 50%;
 }
-.btn-on {
+.buttonIcon .customButton .btn-on {
   background-color: var(--selected-color)!important;
   border-radius: 50%;
 }
